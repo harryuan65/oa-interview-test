@@ -14,4 +14,4 @@ My Implementation of 3 APIs to the [problem](https://github.com/harryuan65/oa-in
 
 ### API documentation
 
-see [here](https://editor.swagger.io/?url=https://raw.githubusercontent.com/harryuan65/oa-interview-test/main/docs/spec/swagger.yaml).
+Please see [here](https://editor.swagger.io/?url=https://raw.githubusercontent.com/harryuan65/oa-interview-test/main/docs/spec/swagger.yaml).
