@@ -3,8 +3,16 @@ openapi: 3.0.1
 info:
   title: API
   version: v1
+components:
+  schemas:
+    error:
+      type: object
+      properties:
+        message:
+          type: string
+          example: "error message"
 paths:
-  "/teachers/{id}/followed_students/{student_id}":
+  "/api/v1/teachers/{id}/followed_students/{student_id}":
     post:
       summary: A teacher follows a student.
       tags:
@@ -23,10 +31,20 @@ paths:
           schema:
             type: string
       responses:
-        200:
-          description: "Success"
+        201:
+          description: "Follow ship created"
         404:
           description: "Student not found"
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        409:
+          description: "Followship already exists"
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
     delete:
       summary: A teacher unfollows a student.
       tags:
@@ -45,33 +63,54 @@ paths:
           schema:
             type: string
       responses:
-        200:
-          description: "Success"
+        202:
+          description: "Deletion Accepted"
         404:
           description: "Student not found"
-  "/teachers/:id/followed_students":
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+  "/api/v1/teachers/{id}/followed_students":
     get:
-      description: Get a list of students followed by the specified teacher
+      summary: Get a list of students followed by the specified teacher
+      tags:
+        - Teachers
+      parameters:
+        - name: id
+          in: path
+          description: The id of the teacher.
+          required: true
+          schema:
+            type: string
       responses:
         200:
           description: "Success"
           content:
             "application/json":
               schema:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                      example: 123
-                    first_name:
-                      type: string
-                      example: Harry
-                    last_name:
-                      type: string
-                      example: Yuan
-                    gender:
-                      type: string
-                      enum: [male, female]
-                  required: [first_name, last_name, gender]
+                type: object
+                properties:
+                  students:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 123
+                        first_name:
+                          type: string
+                          example: Harry
+                        last_name:
+                          type: string
+                          example: Yuan
+                        gender:
+                          type: string
+                          enum: [male, female]
+                      required: [first_name, last_name, gender]
+servers:
+  - url: http://{defaultHost}
+    variables:
+      defaultHost:
+        default: localhost:3000
