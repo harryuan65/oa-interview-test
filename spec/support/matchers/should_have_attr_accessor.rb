@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # `have_attr_reader` matcher for attr_reader
 RSpec::Matchers.define :have_attr_reader do |field|
   match do |object_instance|
@@ -13,7 +15,7 @@ RSpec::Matchers.define :have_attr_reader do |field|
   end
 
   description do
-    'checks to see if there is an attr reader on the instance.'
+    "checks to see if there is an attr reader on the instance."
   end
 end
 
@@ -32,7 +34,7 @@ RSpec::Matchers.define :have_attr_writer do |field|
   end
 
   description do
-    'checks to see if there is an attr writer on the instance.'
+    "checks to see if there is an attr writer on the instance."
   end
 end
 
