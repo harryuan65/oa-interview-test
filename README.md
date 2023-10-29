@@ -1,23 +1,17 @@
-# README
+# Summary
 
-Faria OpenApply Interview Test.
+My Implementation of 3 APIs to the [problem](https://github.com/harryuan65/oa-interview-test/blob/main/PROBLEM.md).
 
-## Problem
-Please read the description thoroughly then create a program to solve this problem [here](./PROBLEM.md) 
+- Teacher can follow a student.
+- Teacher can unfollow a student.
+- Can list specific teacher's followed students.
 
-### Note:
-*  Please use this template to reslove problem.
-*  You should include ​unit tests​ in your solution. We recommend using ​TDD​ to solve these problems.
-* Keep your methods short.
-* Submit ​production-ready code​ that is clean and easy to understand.
+## Spec
 
+### Model
 
-## Rules
+<img width="782" alt="model" src="https://github.com/harryuan65/oa-interview-test/assets/33657734/789b70c9-03cc-485f-83ab-361963aa960a">
 
-1. We want our hiring process to be fair, and for everyone to start from the same place. To enable this, we request that you do not share or publish these problems.
-2. Please submit your solution to your own Github account for review
+### API documentation
 
-
-As a general rule, we allow three days from the date that you receive these instructions to submit your code, but you may request more time from me if needed. If you have any questions about the code as it relates to your ​interview​ process, please contact our HR.
-
-
+see [here](https://editor.swagger.io/?url=https://raw.githubusercontent.com/harryuan65/oa-interview-test/main/docs/spec/swagger.yaml).
