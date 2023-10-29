@@ -60,3 +60,4 @@ gem 'net-http', '~> 0.3.0'
 
 gem 'rspec', '~> 3.12'
 gem 'rspec-rails', '~> 6.0'
+gem 'shoulda-matchers', '~> 5.0'
