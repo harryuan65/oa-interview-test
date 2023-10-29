@@ -18,6 +18,12 @@ module Api
         head :created
       end
 
+      def unfollow_student
+        Teachers::UnfollowStudent.call(teacher_params[:id], teacher_params[:student_id])
+
+        head :accepted
+      end
+
       private
 
       def teacher_params

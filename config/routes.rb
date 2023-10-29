@@ -7,6 +7,7 @@ Rails.application.routes.draw do
         member do
           get :followed_students, action: :list_followed_students
           post "followed_students/:student_id", action: :follow_student
+          delete "followed_students/:student_id", action: :unfollow_student
         end
       end
     end
