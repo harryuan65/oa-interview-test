@@ -12,6 +12,12 @@ module Api
         }
       end
 
+      def follow_student
+        Teachers::FollowStudent.call(teacher_params[:id], teacher_params[:student_id])
+
+        head :created
+      end
+
       private
 
       def teacher_params
