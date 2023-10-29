@@ -11,5 +11,9 @@
 AllCops:
   NewCops: enable
 
+Style/Documentation:
+  Exclude:
+    - db/migrate/*.rb
+
 Style/StringLiterals:
   EnforcedStyle: double_quotes
