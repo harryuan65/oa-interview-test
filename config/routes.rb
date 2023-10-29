@@ -1,3 +1,15 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  namespace :api, format: :json do
+    namespace :v1 do
+      resources :teachers do
+        member do
+          get :followed_students, action: :list_followed_students
+          post "followed_students/:student_id", action: :follow_student
+          delete "followed_students/:student_id", action: :unfollow_student
+        end
+      end
+    end
+  end
 end
