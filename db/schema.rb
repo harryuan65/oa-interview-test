@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2023_10_29_092531) do
 
-  create_table "students", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "students", charset: "utf8mb4", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "gender", null: false
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2023_10_29_092531) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "teacher_student_follow_ships", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "teacher_student_follow_ships", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "teacher_id", null: false
     t.bigint "student_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2023_10_29_092531) do
     t.index ["teacher_id"], name: "index_teacher_student_follow_ships_on_teacher_id"
   end
 
-  create_table "teachers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "teachers", charset: "utf8mb4", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "gender", null: false
