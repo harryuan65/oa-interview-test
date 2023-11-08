@@ -11,8 +11,8 @@ describe Api::V1::TeachersController do
     end
 
     it "routes to #follow_student" do
-      expect(post: "/api/v1/teachers/#{teacher_id}/followed_students").to route_to("api/v1/teachers#follow_student",
-                                                                                   id: teacher_id)
+      expect(post: "/api/v1/teachers/#{teacher_id}/followed_students/#{student_id}").to route_to("api/v1/teachers#follow_student",
+                                                                                   id: teacher_id, student_id: student_id)
     end
 
     it "routes to #unfollow_student" do
